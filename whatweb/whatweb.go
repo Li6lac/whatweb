@@ -1,13 +1,14 @@
-package main
+package whatweb
 
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
 	"io/ioutil"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/PuerkitoBio/goquery"
 	// "github.com/prometheus/common/log"
 )
 
@@ -383,8 +384,8 @@ func detectVersion(app *resultApp, pattrn *pattern, value *string) {
 }
 
 /*
-	fix some bug:
-	1. 如果regex为空的话, 就看headers名是否存在了
+fix some bug:
+1. 如果regex为空的话, 就看headers名是否存在了
 */
 func analyzeHeaders(app *application, headers map[string][]string, detectedApplications *map[string]*resultApp) {
 	patterns := getPatterns(app, "headers")
@@ -455,8 +456,8 @@ func analyzeScripts(app *application, scripts []string, detectedApplications *ma
 }
 
 /*
-	fix some bug:
-	1. 如果regex为空的话, 就看session名是否存在了
+fix some bug:
+1. 如果regex为空的话, 就看session名是否存在了
 */
 func analyzeCookies(app *application, cookies map[string]string, detectedApplications *map[string]*resultApp) {
 	patterns := getPatterns(app, "cookies")

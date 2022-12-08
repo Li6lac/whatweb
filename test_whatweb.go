@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/prometheus/common/log"
-	"study/src/module"
+	"whatweb/whatweb"
+
+	"log"
 )
 
-
-func main()  {
+func main() {
 	wapp, _ := whatweb.Init("src/data/app.json", false)
 
 	httpdata := &whatweb.HttpData{}
@@ -20,7 +20,7 @@ func main()  {
 
 	fmt.Println(httpdata.Url)
 	if err != nil {
-		log.Errorln(err)
+		log.Fatalln(err)
 	}
 	fmt.Println(res)
 }
